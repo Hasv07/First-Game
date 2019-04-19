@@ -21,6 +21,7 @@ public class ProfessorBall extends Application {
     @Override
     public void start(Stage primaryStage)  {
         {
+            int x=2;
 
             Ballpane ball=new Ballpane();
             Text txt1=new Text();
@@ -35,12 +36,32 @@ public class ProfessorBall extends Application {
             Text txt2=new Text();
             txt2.setFont(new Font(30));
 
-            BorderPane p=new BorderPane();
             ClockPane clock=new ClockPane();
+            HBox H=new HBox();
+            H.getChildren().addAll(clock,txt1,txt2);
+            BorderPane p=new BorderPane();
+            p.setTop(H);
+            p.setCenter(ball);
+            StackPane p2= new StackPane();
+            Text txt3 =new Text();
+            txt3.setFont(new Font(60));
+            p2.getChildren().add(txt3);
+       /*     Pane[] pane=new Pane[2];
+            pane[0].getChildren().add(p);
+            pane[1].getChildren().add(p2);*/
+
+            Scene scene = new Scene(p);
+
             Timeline animation=new Timeline(new KeyFrame(Duration.millis(1000), e->{
                 clock.setcurrenttime(); // Set a new clock time
                 ball.increaseSpeed();
                 txt2.setText(Ballpane.counter.toString());
+
+                if(ball.moveball()) {
+                    txt3.setText("Game Over"+"\n"+" Score:"+Ballpane.counter.toString());
+
+                    scene.setRoot(p2);
+                }
 
             }));
 
@@ -59,23 +80,10 @@ public class ProfessorBall extends Application {
                else if(e.getButton()==MouseButton.SECONDARY) ball.MoveLeft();
            });
 */
-            HBox H=new HBox();
-            H.getChildren().addAll(clock,txt1,txt2);
 
 
-            p.setTop(H);
-            p.setCenter(ball);
-            StackPane p2= new StackPane();
-            Text txt3 =new Text();
-            txt3.setFont(new Font(60));
-            txt3.setText("Game Over");
-            p2.getChildren().add(txt3);
-       /*     Pane[] pane=new Pane[2];
-            pane[0].getChildren().add(p);
-            pane[1].getChildren().add(p2);*/
-
-            Scene scene = new Scene(p);
            if(ball.moveball()) {
+
                 scene.setRoot(p2);
             }
             scene.setOnKeyPressed(e -> {

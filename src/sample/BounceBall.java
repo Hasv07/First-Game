@@ -57,16 +57,21 @@ class Ballpane extends Pane {
 
     static Integer counter = 0;
     final static double redius = 50;
-    double x = redius, y = redius, dy = 1, dx = 1;
+    double x = redius, y = redius, dy = 1, dx = 1,q=600,w=600,dq=2,dw=1;
     Circle circle = new Circle(x, y, redius);
+    Circle circle2 = new Circle(q, w, redius);
+
     Timeline animation;
     Rectangle person = new Rectangle(0, 0, 70, 70);
 
 
     public Ballpane() {
+
         person.layoutYProperty().bind(heightProperty().subtract(70));
         circle.setFill(Color.BLUE);
-        getChildren().addAll(circle, person);
+        circle2.setFill(Color.YELLOW);
+
+        getChildren().addAll(circle,circle2, person);
         animation = new Timeline(new KeyFrame(Duration.millis(50), e -> moveball()));
 
         animation.setCycleCount(Timeline.INDEFINITE);
@@ -121,17 +126,35 @@ class Ballpane extends Pane {
         if (y < redius || y > getHeight() - redius) {
             dy *= -1;
         }
+        if (q < redius || q > getWidth() - redius) {
+            dq *= -1;
+        }
+
+        if (w < redius || w > getHeight() - redius) {
+            dw *= -1;
+        }
 
 
         x += dx;
         y += dy;
+        q += dq;
+        w += dw;
         circle.setCenterX(x);
         circle.setCenterY(y);
+        circle2.setCenterX(q);
+        circle2.setCenterY(w);
+
         if(counter>0) {
 
             Shape shape = Shape.intersect(person, circle);
+
+            Shape shape2 = Shape.intersect(person, circle2);
+
+
             boolean intersects = shape.getBoundsInLocal().getWidth() != -1;
-            if (intersects) {
+            boolean intersects2 = shape2.getBoundsInLocal().getWidth() != -1;
+
+            if (intersects||intersects2) {
                 System.out.println("Collision" + counter);
                 return true;
 
