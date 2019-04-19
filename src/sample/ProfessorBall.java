@@ -75,7 +75,7 @@ public class ProfessorBall extends Application {
             pane[1].getChildren().add(p2);*/
 
             Scene scene = new Scene(p);
-            if(ball.moveball()) {
+           if(ball.moveball()) {
                 scene.setRoot(p2);
             }
             scene.setOnKeyPressed(e -> {
