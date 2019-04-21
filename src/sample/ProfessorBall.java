@@ -17,10 +17,11 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class ProfessorBall extends Application {
+
     @Override
     public void start(Stage primaryStage)  {
         {
-            int x=2;
+
 
             Ballpane ball=new Ballpane();
             Text txt1=new Text();
@@ -51,21 +52,24 @@ public class ProfessorBall extends Application {
 
             Scene scene = new Scene(p);
 
-            Timeline animation=new Timeline(new KeyFrame(Duration.millis(1000), e->{
+            Timeline animation=new Timeline(new KeyFrame(Duration.millis(50), e->{
                 clock.setcurrenttime(); // Set a new clock time
                 ball.increaseSpeed();
                 txt2.setText(Ballpane.counter.toString());
+                    if (ball.moveball()) {
 
-                if(ball.moveball()) {
-                    txt3.setText("Game Over"+"\n"+" Score:"+Ballpane.counter.toString());
+                        txt3.setText("Game Over" + "\n" + " Score:" + Ballpane.counter);
+                        scene.setRoot(p2);
 
-                    scene.setRoot(p2);
-                }
+                        primaryStage.setScene(scene);
+                    }
+
 
             }));
 
             animation.setCycleCount(Timeline.INDEFINITE);
             animation.play();
+
             // Increase and decrease animation with key presses
 
 
@@ -81,10 +85,7 @@ public class ProfessorBall extends Application {
 */
 
 
-           if(ball.moveball()) {
 
-                scene.setRoot(p2);
-            }
             scene.setOnKeyPressed(e -> {
                 if      (e.getCode() == KeyCode.RIGHT)   ball.MoveRight();
                 else if (e.getCode() == KeyCode.LEFT) ball.MoveLeft();
