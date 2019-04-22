@@ -4,11 +4,13 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 
+import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 
 import javafx.scene.layout.*;
 
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
 
 import javafx.scene.text.Text;
@@ -16,7 +18,15 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
+import java.net.URL;
+
+
 public class ProfessorBall extends Application {
+    public static void main(String[] args) {
+        launch(args);
+
+    }
 
     @Override
     public void start(Stage primaryStage)  {
@@ -53,22 +63,34 @@ public class ProfessorBall extends Application {
             Scene scene = new Scene(p);
 
             Timeline animation=new Timeline(new KeyFrame(Duration.millis(50), e->{
+
                 clock.setcurrenttime(); // Set a new clock time
                 ball.increaseSpeed();
                 txt2.setText(Ballpane.counter.toString());
-                    if (ball.moveball()) {
 
-                        txt3.setText("Game Over" + "\n" + " Score:" + Ballpane.counter);
-                        scene.setRoot(p2);
-
-                        primaryStage.setScene(scene);
-                    }
 
 
             }));
 
+            Timeline animation2=new Timeline(new KeyFrame(Duration.millis(50), e->{
+
+                if (ball.moveball()) {
+
+                    txt3.setText("Game Over" + "\n" + " Score:" + Ballpane.counter);
+
+                    scene.setRoot(p2);
+                    animation.stop();
+
+
+                }}));
+
+
+            animation2.setCycleCount(Timeline.INDEFINITE);
+            animation2.play();
+
             animation.setCycleCount(Timeline.INDEFINITE);
             animation.play();
+
 
             // Increase and decrease animation with key presses
 
@@ -93,11 +115,20 @@ public class ProfessorBall extends Application {
 
 
             });
+            URL url = this.getClass().getResource("/audio/Black_Clover_-_Opening_7_HDGrabvidtoMp3.mp3");
 
-            primaryStage.setScene(scene);
-            primaryStage.setFullScreen(true);
-            primaryStage.setTitle("ProfessorBall");
-            primaryStage.show();
+            AudioClip note=new AudioClip(url.toString());
+            note.setVolume(100);
+            note.setCycleCount(-1);
+
+            note.play();
+
+
+
+    primaryStage.setScene(scene);
+    primaryStage.setFullScreen(true);
+    primaryStage.setTitle("ProfessorBall");
+    primaryStage.show();
 
 
         }
