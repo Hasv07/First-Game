@@ -6,6 +6,8 @@ import javafx.application.Application;
 
 import javafx.concurrent.Task;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 
 import javafx.scene.layout.*;
@@ -18,7 +20,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.IOException;
 import java.net.URL;
 
 
@@ -31,7 +32,6 @@ public class ProfessorBall extends Application {
     @Override
     public void start(Stage primaryStage)  {
         {
-
 
             Ballpane ball=new Ballpane();
             Text txt1=new Text();
@@ -74,12 +74,15 @@ public class ProfessorBall extends Application {
 
             Timeline animation2=new Timeline(new KeyFrame(Duration.millis(50), e->{
 
-                if (ball.moveball()) {
+                if (ball.cond) {
 
                     txt3.setText("Game Over" + "\n" + " Score:" + Ballpane.counter);
 
+
                     scene.setRoot(p2);
-                    animation.stop();
+
+
+
 
 
                 }}));
@@ -109,9 +112,10 @@ public class ProfessorBall extends Application {
 
 
             scene.setOnKeyPressed(e -> {
-                if      (e.getCode() == KeyCode.RIGHT)   ball.MoveRight();
-                else if (e.getCode() == KeyCode.LEFT) ball.MoveLeft();
-
+                if(!(ball.j>14)) {
+                    if (e.getCode() == KeyCode.RIGHT) ball.MoveRight();
+                    else if (e.getCode() == KeyCode.LEFT) ball.MoveLeft();
+                }
 
 
             });

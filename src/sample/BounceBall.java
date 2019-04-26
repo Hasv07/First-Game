@@ -7,18 +7,14 @@ import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
-import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -57,8 +53,9 @@ public class BounceBall extends Application {
 
 }
 class Ballpane extends Pane {
-    int i=0;
-    boolean cond;
+    Timeline deadanimation;
+    static int i=0,j=0;
+    boolean cond=false;
     static Integer counter = 0;
     final static double redius = 50;
     double x = redius, y = redius, dy = 1, dx = 1,q=600,w=600,dq=1.5,dw=1;
@@ -67,6 +64,10 @@ class Ballpane extends Pane {
 
     Timeline animation,animation2;
     ImageView person;
+    Rectangle pane;
+
+    Image image1=new Image("images/62999356-seamless-game-background-flat-style-2d-game-application.jpg");
+    ImageView image2=new ImageView(image1);
       Image [] image={new Image("images/Walk (1).png") ,new Image("images/Walk (2).png"),
               new Image("images/Walk (3).png"),new Image("images/Walk (4).png"),
               new Image("images/Walk (5).png"),new Image("images/Walk (6).png"),
@@ -76,7 +77,9 @@ class Ballpane extends Pane {
               new Image("images/Walk (13).png"),new Image("images/Walk (14).png"),
               new Image("images/Walk (15).png")
    ,new Image("images/Dead (1).png") ,new Image("images/Dead (2).png"),
-            new Image("images/Dead (5).png"),new Image("images/Dead (6).png"),
+              new Image("images/Dead (3).png"),new Image("images/Dead (4).png"),
+
+              new Image("images/Dead (5).png"),new Image("images/Dead (6).png"),
             new Image("images/Dead (7).png"),new Image("images/Dead (8).png"),
             new Image("images/Dead (9).png"),new Image("images/Dead (10).png"),
             new Image("images/Dead (11).png"),new Image("images/Dead (12).png"),
@@ -88,10 +91,13 @@ class Ballpane extends Pane {
 
 
 
+        pane=new Rectangle(300,300);
+        pane.widthProperty().bind(widthProperty());
+        pane.heightProperty().bind(heightProperty().add(100));
+        pane.setFill(new ImagePattern(image1));
+        circle.setFill(new ImagePattern(new Image("images/ball.png")));
 
-
-
-
+        circle2.setFill(new ImagePattern(new Image("images/ball.png")));
 
 
 
@@ -103,17 +109,20 @@ class Ballpane extends Pane {
         person.setFitHeight(100);
         person.setFitWidth(100);
 
-        circle.setFill(Color.BLUE);
+      /*  circle.setFill(Color.BLUE);
         circle2.setFill(Color.YELLOW);
-
-        getChildren().addAll(circle,circle2,person);
+*/
+        getChildren().addAll(pane,circle,circle2,person);
         animation = new Timeline(new KeyFrame(Duration.millis(50), e -> moveball()));
         animation2 = new Timeline(new KeyFrame(Duration.millis(1000), e -> counter++));
 
         Timeline animation3=new Timeline(new KeyFrame(Duration.millis(50), e->{
 
-            if (moveball()) {
-
+            if (cond) {
+                dx=0;
+                dy=0;
+                dw=0;
+                dq=0;
                 animation.stop();
                 animation2.stop();
 
@@ -165,18 +174,19 @@ class Ballpane extends Pane {
         person.setScaleY(1);
 
         person.setRotate(360);
-
-
-            person.setImage(image[i]);
-            i++;
-
-
-
         if(i>14)
         {
             i=0;
 
         }
+
+
+
+        person.setImage(image[i]);
+            i++;
+
+
+
 
 
     }
@@ -192,17 +202,17 @@ class Ballpane extends Pane {
 
 
 
-
-        person.setImage(image[i]);
-        i++;
-
-
-
         if(i>14)
         {
             i=0;
 
         }
+
+
+        person.setImage(image[i]);
+        i++;
+
+
 
 
 
@@ -261,67 +271,72 @@ class Ballpane extends Pane {
 
             }
         }*/
-        if(counter>0) {
-/*
-            System.out.println(Math.sqrt(Math.pow(circle.getCenterX()-person.getX(),2)+Math.pow(circle.getCenterY()-person.getY(),2)));
-*/
+        if(counter>0 && !cond) {
+
+
             if(circle.intersects(person.getBoundsInParent()))
             {
-                i=0;
-
-                Timeline deadanimation=new Timeline(new KeyFrame(Duration.millis(50),e->{
-                    person.setImage(image[i+15]);
-                    i++;
 
 
 
-                    if(i>29)
+                deadanimation=new Timeline(new KeyFrame(Duration.millis(50),e->{
+                    if(j<=14 )
                     {
-                        i=15;
+                        person.setImage(image[j+15]);
+
 
                     }
+                    j++;
+                    if(j==30) {
+                        cond = true;
+
+                        deadanimation.stop();
+                    }
+
+
+
+
 
                 }
-                        ));
-                deadanimation.setCycleCount(1);
+                ));
                 deadanimation.play();
                 System.out.println("Collision" + counter);
 
-                Timeline deadanimation2=new Timeline();
-                deadanimation2.setOnFinished(e-> {
-                    cond = true;
-                });
+
                 if(cond)
                 {
+
                     return true;
                 }
             }
             if(circle2.intersects(person.getBoundsInParent()))
             {
-                i=0;
-
-                Timeline deadanimation=new Timeline(new KeyFrame(Duration.millis(100),e->{
-
-                    person.setImage(image[i+15]);
-                    i++;
 
 
 
-                    if(i>29)
-                    {
-                        i=15;
+                 deadanimation=new Timeline(new KeyFrame(Duration.millis(50),e->{
 
-                    }
+                     if(j<=14 )
+                     {
+                         person.setImage(image[j+15]);
 
-                }
+
+                     }
+                     j++;
+                     if(j==30) {
+                         cond = true;
+
+                         deadanimation.stop();
+                     }
+
+
+
+
+                 }
                 ));
-                deadanimation.setCycleCount(1);
                 deadanimation.play();
                 System.out.println("Collision" + counter);
-                Timeline deadanimation2=new Timeline();
-                deadanimation2.setOnFinished(e->{
-                     cond=true;
-                });
+
                 if(cond)
                 {
                     return true;
