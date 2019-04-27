@@ -24,6 +24,8 @@ import java.net.URL;
 
 
 public class ProfessorBall extends Application {
+    Timeline main1;
+
     public static void main(String[] args) {
         launch(args);
 
@@ -32,6 +34,7 @@ public class ProfessorBall extends Application {
     @Override
     public void start(Stage primaryStage)  {
         {
+            menupane main=new menupane();
 
             Ballpane ball=new Ballpane();
             Text txt1=new Text();
@@ -60,19 +63,21 @@ public class ProfessorBall extends Application {
             pane[0].getChildren().add(p);
             pane[1].getChildren().add(p2);*/
 
-            Scene scene = new Scene(p);
+            Scene scene = new Scene(main);
 
-            Timeline animation=new Timeline(new KeyFrame(Duration.millis(50), e->{
+
+            Timeline animation = new Timeline(new KeyFrame(Duration.millis(50), e1 -> {
 
                 clock.setcurrenttime(); // Set a new clock time
                 ball.increaseSpeed();
                 txt2.setText(Ballpane.counter.toString());
 
+            }
+
+            ));
 
 
-            }));
-
-            Timeline animation2=new Timeline(new KeyFrame(Duration.millis(50), e->{
+            Timeline animation2=new Timeline(new KeyFrame(Duration.millis(50), e2->{
 
                 if (ball.cond) {
 
@@ -86,13 +91,28 @@ public class ProfessorBall extends Application {
 
 
                 }}));
+            main1 = new Timeline(new KeyFrame(Duration.millis(1), e -> {
+
+                if(main.flag)
+                {
+                    main1.stop();
+                    scene.setRoot(p);
+                    animation.setCycleCount(Timeline.INDEFINITE);
+                    animation.play();
 
 
-            animation2.setCycleCount(Timeline.INDEFINITE);
-            animation2.play();
+                    animation2.setCycleCount(Timeline.INDEFINITE);
+                    animation2.play();
 
-            animation.setCycleCount(Timeline.INDEFINITE);
-            animation.play();
+
+                }
+            }));
+
+            main1.setCycleCount(-1);
+            main1.play();
+
+
+
 
 
             // Increase and decrease animation with key presses

@@ -118,17 +118,23 @@ class Ballpane extends Pane {
 
         Timeline animation3=new Timeline(new KeyFrame(Duration.millis(50), e->{
 
-            if (cond) {
-                dx=0;
-                dy=0;
-                dw=0;
-                dq=0;
+            if (cond||!(menupane.flag)) {
+             /*  dx = 0;
+                dy = 0;
+                dw = 0;
+                dq = 0;*/
                 animation.stop();
                 animation2.stop();
 
+            }
+            else if(menupane.flag) {
 
 
-            }}));
+                animation.play();
+                animation2.play();
+            }
+
+        }));
 
 
         animation.setCycleCount(Timeline.INDEFINITE);
