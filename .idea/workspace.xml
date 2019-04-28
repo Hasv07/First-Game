@@ -1,134 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d263c5ff-abbb-445b-bea3-ff47630220d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/Arrow/icons-chevron-right-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (10).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (11).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (12).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (13).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (14).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (15).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (4).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (6).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (7).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (8).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy dead/Dead (9).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (10).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (11).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (12).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (13).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (14).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (15).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (4).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (6).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (7).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (8).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Boy walk/Walk (9).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (10).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (4).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (6).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (7).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (8).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot Idle/Idle (9).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (10).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (4).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (6).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (7).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (8).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot dead/Dead (9).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (4).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (6).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (7).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Robot walk/walk (8).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (10).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (11).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (12).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (13).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (14).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (15).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/First-Game/images/Walk (9).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (10).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (11).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (12).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (13).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (14).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (15).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Dead (9).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (10).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (11).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (12).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (13).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (14).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (15).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Walk (9).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/background/icons8-chevron-right-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (10).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (11).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (12).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (13).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (14).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (15).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/boyidleanimation/Idle (9).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/BounceBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/BounceBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ProfessorBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ProfessorBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/TestMain.java" afterDir="false" />
-    </list>
+    <list default="true" id="d263c5ff-abbb-445b-bea3-ff47630220d6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/BounceBall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="319" column="29" selection-start-line="319" selection-start-column="29" selection-end-line="319" selection-end-column="29" />
+            <state relative-caret-position="143">
+              <caret line="149" column="115" selection-start-line="149" selection-end-line="150" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6588#6589#0" expanded="true" />
@@ -197,11 +70,11 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-end-line="116" />
+            <state relative-caret-position="323">
+              <caret line="77" column="36" selection-start-line="77" selection-end-line="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3355#3356#0" expanded="true" />
@@ -262,9 +135,9 @@
         <option value="$PROJECT_DIR$/src/sample/ButtonStyle.java" />
         <option value="$PROJECT_DIR$/src/sample/Character.java" />
         <option value="$PROJECT_DIR$/src/sample/Type.java" />
-        <option value="$PROJECT_DIR$/src/sample/TestMain.java" />
         <option value="$PROJECT_DIR$/src/sample/ProfessorBall.java" />
         <option value="$PROJECT_DIR$/src/sample/BounceBall.java" />
+        <option value="$PROJECT_DIR$/src/sample/TestMain.java" />
       </list>
     </option>
   </component>
@@ -787,18 +660,6 @@
     <entry file="file://$PROJECT_DIR$/src/images/Boy walk/Walk (1).png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/TestMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-end-line="116" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3355#3356#0" expanded="true" />
-            <element signature="e#3383#3384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Character.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -822,12 +683,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/BounceBall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="319" column="29" selection-start-line="319" selection-start-column="29" selection-end-line="319" selection-end-column="29" />
+        <state relative-caret-position="143">
+          <caret line="149" column="115" selection-start-line="149" selection-end-line="150" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6588#6589#0" expanded="true" />
             <element signature="e#6679#6680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/TestMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="77" column="36" selection-start-line="77" selection-end-line="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3355#3356#0" expanded="true" />
+            <element signature="e#3383#3384#0" expanded="true" />
           </folding>
         </state>
       </provider>

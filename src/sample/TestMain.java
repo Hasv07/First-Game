@@ -75,6 +75,7 @@ class menupane extends Pane {
             if (idleIndex >= Characters[charindex].Idle) {
             idleIndex = 0;
         }
+            idleIndex++;
                 character.setImage(new Image("images/"+Characters[charindex].getName()+" "+Types[0].getName()+"/Idle ("+(idleIndex+1)+").png"));
 
 
