@@ -4,6 +4,7 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
@@ -15,25 +16,45 @@ import java.util.ArrayList;
 
 class menupane extends Pane {
     ArrayList<Image> background = new ArrayList<>();
-    int index;
+    int index,idleIndex;
     Rectangle pane;
     static boolean flag=false;
     static ButtonStyle bt1=new ButtonStyle("Start");
-
-
+     Image arrow=new Image("images/Arrow/icons8-chevron-right-100.png");
     public menupane() {
+        ImageView arrowView=new ImageView(arrow);
+        ImageView arrowView2=new ImageView(arrow);
          bt1.setLayoutY(860);
          bt1.setLayoutX(850);
+        ImageView character=new ImageView(new Image("images/boyidleanimation/Idle (1).png"));
+        character.fitHeightProperty().bind(heightProperty().multiply(0.3));
+        character.fitWidthProperty().bind(widthProperty().multiply(0.22));
+
+
 
         pane=new Rectangle();
         pane.widthProperty().bind(widthProperty());
         pane.heightProperty().bind(heightProperty());
-        getChildren().addAll(pane,bt1);
-  /*   bt1.layoutXProperty().bind(pane.widthProperty().multiply(0.45));
-        bt1.layoutYProperty().bind((pane.heightProperty().multiply(0.86)));*/
+         bt1.layoutXProperty().bind(pane.widthProperty().multiply(0.46));
+        bt1.layoutYProperty().bind((pane.heightProperty().multiply(0.786)));
+
+        arrowView.layoutXProperty().bind(pane.widthProperty().multiply(0.7));
+        arrowView.layoutYProperty().bind((pane.heightProperty().multiply(0.5)));
+        arrowView2.layoutXProperty().bind(pane.widthProperty().multiply(0.23));
+        arrowView2.layoutYProperty().bind((pane.heightProperty().multiply(0.5)));
+        character.layoutXProperty().bind(pane.widthProperty().multiply(0.45));
+        character.layoutYProperty().bind((pane.heightProperty().multiply(0.39)));
+        arrowView2.setScaleX(-1);
+        getChildren().addAll(pane,bt1,arrowView,arrowView2,character);
 
         Timeline animation=new Timeline(new KeyFrame(Duration.millis(75),e->
         {
+                character.setImage(new Image("images/boyidleanimation/Idle ("+(idleIndex+1)+").png"));
+                idleIndex++;
+                if (idleIndex >= 15) {
+                idleIndex = 0;
+                }
+
                 if(index<9) {
 
                     pane.setFill(new ImagePattern(new Image("images/background/y2mate.com - studiopolis_background_animation_dZLR5MuBeuk_1080p 00" + (index + 1) + ".jpg")));

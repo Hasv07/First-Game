@@ -16,8 +16,8 @@ public class ButtonStyle extends Button {
         getStylesheets().add("sample/Style.css");
         setText(text);
         setButtonFont();
-        setPrefWidth(190);
-        setPrefHeight(49);
+        setPrefWidth(150);
+        setPrefHeight(50);
         getStyleClass().add("record-sales");
         initializeBtnListeners();
 

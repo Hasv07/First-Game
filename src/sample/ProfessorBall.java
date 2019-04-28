@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 
+import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -26,6 +27,7 @@ public class ProfessorBall extends Application {
     Timeline main1;
     Image img=new Image("cursor/wind-rose.png");
 
+
     public static void main(String[] args) {
         launch(args);
 
@@ -40,7 +42,6 @@ public class ProfessorBall extends Application {
             Text txt1=new Text();
             txt1.setFont(new Font(30));
             txt1.setText("Score :");
-
 
 
 
@@ -64,7 +65,8 @@ public class ProfessorBall extends Application {
             pane[1].getChildren().add(p2);*/
 
             Scene scene = new Scene(main);
-
+            primaryStage.setMinWidth(800);
+            primaryStage.setMinHeight(800);
 
             Timeline animation = new Timeline(new KeyFrame(Duration.millis(50), e1 -> {
 
@@ -87,22 +89,35 @@ public class ProfessorBall extends Application {
                     scene.setRoot(p2);
 
 
+                    scene.setCursor(new ImageCursor(img));
+
+
+
 
 
 
                 }}));
             main1 = new Timeline(new KeyFrame(Duration.millis(1), e -> {
 
-                if(main.flag)
-                {
+
+                if (main.flag) {
                     main1.stop();
                     scene.setRoot(p);
+
+                    scene.setCursor(Cursor.NONE);
+
+
                     animation.setCycleCount(Timeline.INDEFINITE);
                     animation.play();
 
 
                     animation2.setCycleCount(Timeline.INDEFINITE);
                     animation2.play();
+
+
+                } else {
+
+                        scene.setCursor(new ImageCursor(img));
 
 
                 }
@@ -141,9 +156,7 @@ public class ProfessorBall extends Application {
             });
 
 
-            scene.setOnMouseEntered(e->{
-                    scene.setCursor(new ImageCursor(img));
-            });
+
             URL url = this.getClass().getResource("/audio/Black_Clover_-_Opening_7_HDGrabvidtoMp3.mp3");
 
             AudioClip note=new AudioClip(url.toString());
