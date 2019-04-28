@@ -4,10 +4,9 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 
-import javafx.concurrent.Task;
+import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 
 import javafx.scene.layout.*;
@@ -25,6 +24,7 @@ import java.net.URL;
 
 public class ProfessorBall extends Application {
     Timeline main1;
+    Image img=new Image("cursor/wind-rose.png");
 
     public static void main(String[] args) {
         launch(args);
@@ -138,6 +138,11 @@ public class ProfessorBall extends Application {
                 }
 
 
+            });
+
+
+            scene.setOnMouseEntered(e->{
+                    scene.setCursor(new ImageCursor(img));
             });
             URL url = this.getClass().getResource("/audio/Black_Clover_-_Opening_7_HDGrabvidtoMp3.mp3");
 

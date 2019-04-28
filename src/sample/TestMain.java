@@ -29,7 +29,8 @@ class menupane extends Pane {
         pane.widthProperty().bind(widthProperty());
         pane.heightProperty().bind(heightProperty());
         getChildren().addAll(pane,bt1);
-
+  /*   bt1.layoutXProperty().bind(pane.widthProperty().multiply(0.45));
+        bt1.layoutYProperty().bind((pane.heightProperty().multiply(0.86)));*/
 
         Timeline animation=new Timeline(new KeyFrame(Duration.millis(75),e->
         {
