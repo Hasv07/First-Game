@@ -21,12 +21,34 @@ class menupane extends Pane {
     static boolean flag=false;
     static ButtonStyle bt1=new ButtonStyle("Start");
      Image arrow=new Image("images/Arrow/icons8-chevron-right-100.png");
+     Character[] Characters={Character.Boy,Character.Robot};
+     Type[] Types={Type.Idle,Type.walk,Type.dead};
+    ImageView character;
+    ImageView arrowView, arrowView2;
+   static   int charindex;
     public menupane() {
-        ImageView arrowView=new ImageView(arrow);
-        ImageView arrowView2=new ImageView(arrow);
+
+
+         character=new ImageView(new Image("images/"+Characters[0].getName()+" "+Types[0].getName()+"/Idle (1).png"));
+
+         arrowView=new ImageView(arrow);
+         arrowView2=new ImageView(arrow);
+        arrowView.setOnMousePressed(e-> {
+
+       arrowview_arrowpressed();
+
+        });
+        arrowView2.setOnMousePressed(e->{
+            arrowview2_arrowpressed();
+        });
+        arrowView.setOnMouseReleased(e->{
+            arrowView.setImage(arrow);
+        });
+        arrowView2.setOnMouseReleased(e->{
+            arrowView2.setImage(arrow);
+        });
          bt1.setLayoutY(860);
          bt1.setLayoutX(850);
-        ImageView character=new ImageView(new Image("images/boyidleanimation/Idle (1).png"));
         character.fitHeightProperty().bind(heightProperty().multiply(0.3));
         character.fitWidthProperty().bind(widthProperty().multiply(0.22));
 
@@ -49,11 +71,12 @@ class menupane extends Pane {
 
         Timeline animation=new Timeline(new KeyFrame(Duration.millis(75),e->
         {
-                character.setImage(new Image("images/boyidleanimation/Idle ("+(idleIndex+1)+").png"));
-                idleIndex++;
-                if (idleIndex >= 15) {
-                idleIndex = 0;
-                }
+
+            if (idleIndex >= Characters[charindex].Idle) {
+            idleIndex = 0;
+        }
+                character.setImage(new Image("images/"+Characters[charindex].getName()+" "+Types[0].getName()+"/Idle ("+(idleIndex+1)+").png"));
+
 
                 if(index<9) {
 
@@ -94,6 +117,33 @@ class menupane extends Pane {
 
         });
     }
+    public void arrowview_arrowpressed()
+    {
+        charindex++;
+        arrowView.setImage(new Image("images/Arrow/icons-chevron-right-100.png"));
+
+        if (charindex < Characters.length)
+            character.setImage(new Image("images/" + Characters[charindex].getName() + " " + Types[0].getName() + "/Idle (1).png"));
+
+        else{
+            charindex = 0;
+            character.setImage(new Image("images/" + Characters[charindex].getName() + " " + Types[0].getName() + "/Idle (1).png"));
+        }
+    }
+    public void arrowview2_arrowpressed()
+    {
+        charindex++;
+        arrowView2.setImage(new Image("images/Arrow/icons-chevron-right-100.png"));
+
+        if (charindex < Characters.length)
+            character.setImage(new Image("images/" + Characters[charindex].getName() + " " + Types[0].getName() + "/Idle (1).png"));
+
+        else{
+            charindex = 0;
+            character.setImage(new Image("images/" + Characters[charindex].getName() + " " + Types[0].getName() + "/Idle (1).png"));
+        }
+    }
+
 }
 public class TestMain extends Application {
     @Override

@@ -26,6 +26,8 @@ import java.net.URL;
 public class ProfessorBall extends Application {
     Timeline main1;
     Image img=new Image("cursor/wind-rose.png");
+    Character[] Characters={Character.Boy,Character.Robot};
+
 
 
     public static void main(String[] args) {
@@ -60,9 +62,10 @@ public class ProfessorBall extends Application {
             Text txt3 =new Text();
             txt3.setFont(new Font(60));
             p2.getChildren().add(txt3);
-       /*     Pane[] pane=new Pane[2];
+  /*   Pane[] pane=new Pane[2];
             pane[0].getChildren().add(p);
             pane[1].getChildren().add(p2);*/
+
 
             Scene scene = new Scene(main);
             primaryStage.setMinWidth(800);
@@ -130,15 +133,15 @@ public class ProfessorBall extends Application {
 
 
 
-            // Increase and decrease animation with key presses
 
 
-            ball.requestFocus();
-           /* scene.setOnKeyPressed(e -> {
+/*
+ scene.setOnKeyPressed(e -> {
                 if      (e.getCode() == KeyCode.RIGHT)   ball.MoveRight();
                 else if (e.getCode() == KeyCode.LEFT) ball.MoveLeft();
-            });*/
-      /*     ball.setOnMouseClicked(e ->{
+            });
+
+     ball.setOnMouseClicked(e ->{
                if (e.getButton()==MouseButton.PRIMARY)   ball.MoveRight();
                else if(e.getButton()==MouseButton.SECONDARY) ball.MoveLeft();
            });
@@ -146,8 +149,11 @@ public class ProfessorBall extends Application {
 
 
 
+
+            ball.requestFocus();
+
             scene.setOnKeyPressed(e -> {
-                if(!(ball.j>14)) {
+                if(!(ball.j>=Characters[menupane.charindex].dead)) {
                     if (e.getCode() == KeyCode.RIGHT) ball.MoveRight();
                     else if (e.getCode() == KeyCode.LEFT) ball.MoveLeft();
                 }

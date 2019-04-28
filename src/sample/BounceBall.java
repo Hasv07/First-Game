@@ -62,13 +62,18 @@ class Ballpane extends Pane {
     Circle circle = new Circle(x, y, redius);
     Circle circle2 = new Circle(q, w, redius);
 
-    Timeline animation,animation2;
-    ImageView person;
+    Timeline animation,animation2,animation3;
+    ImageView person=new ImageView();
     Rectangle pane;
 
     Image image1=new Image("images/62999356-seamless-game-background-flat-style-2d-game-application.jpg");
+/*
     ImageView image2=new ImageView(image1);
-      Image [] image={new Image("images/Walk (1).png") ,new Image("images/Walk (2).png"),
+*/
+
+/*
+
+    Image [] image={new Image("images/Walk (1).png") ,new Image("images/Walk (2).png"),
               new Image("images/Walk (3).png"),new Image("images/Walk (4).png"),
               new Image("images/Walk (5).png"),new Image("images/Walk (6).png"),
               new Image("images/Walk (7).png"),new Image("images/Walk (8).png"),
@@ -85,9 +90,18 @@ class Ballpane extends Pane {
             new Image("images/Dead (11).png"),new Image("images/Dead (12).png"),
             new Image("images/Dead (13).png"),new Image("images/Dead (14).png"),
             new Image("images/Dead (15).png")};
+*/
+Character[] Characters={Character.Boy,Character.Robot};
+Type[] Types={Type.Idle,Type.walk,Type.dead};
+    Image [] walkimage;
+    Image [] deadimage;
+    int counter2=0;
+
 
 
     public Ballpane() {
+
+
 
 
 
@@ -101,7 +115,6 @@ class Ballpane extends Pane {
 
 
 
-        person=new ImageView(image[0]);
 
 
         person.layoutYProperty().bind(heightProperty().subtract(100));
@@ -109,33 +122,45 @@ class Ballpane extends Pane {
         person.setFitHeight(100);
         person.setFitWidth(100);
 
-      /*  circle.setFill(Color.BLUE);
-        circle2.setFill(Color.YELLOW);
-*/
+
+
+
+
+
         getChildren().addAll(pane,circle,circle2,person);
         animation = new Timeline(new KeyFrame(Duration.millis(50), e -> moveball()));
         animation2 = new Timeline(new KeyFrame(Duration.millis(1000), e -> counter++));
 
-        Timeline animation3=new Timeline(new KeyFrame(Duration.millis(50), e->{
+         animation3=new Timeline(new KeyFrame(Duration.millis(50), e->{
 
             if (cond||!(menupane.flag)) {
-             /*  dx = 0;
-                dy = 0;
-                dw = 0;
-                dq = 0;*/
+
+
+
                 animation.stop();
                 animation2.stop();
 
             }
-            else if(menupane.flag) {
+            else if(menupane.flag&&counter2==0) {
+                counter2=1;
+                walkimage=new Image[Characters[menupane.charindex].walk];
+                deadimage=new Image[Characters[menupane.charindex].dead];
+                person.setImage(new Image("images/" + Characters[menupane.charindex].getName() + " " + Types[1].getName() + "/Walk (1).png"));
+                for (int i=0;i<walkimage.length;i++) {
+                    walkimage[i]=new Image("images/"+Characters[menupane.charindex].getName()+" "+Types[1].getName()+"/Walk ("+(i+1)+").png");
 
+                }
+
+                for (int i=0;i<deadimage.length;i++) {
+                    deadimage[i]=new Image("images/"+Characters[menupane.charindex].getName()+" "+Types[2].getName()+"/Dead ("+(i+1)+").png");
+
+                }
 
                 animation.play();
                 animation2.play();
             }
 
         }));
-
 
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
@@ -180,16 +205,20 @@ class Ballpane extends Pane {
         person.setScaleY(1);
 
         person.setRotate(360);
-        if(i>14)
+
+        i++;
+
+        if(i>=Characters[menupane.charindex].walk)
         {
             i=0;
 
         }
+        System.out.println("images/"+Characters[menupane.charindex].getName()+" "+Types[1].getName()+"/Walk ("+(i+1)+").png");
+
+        person.setImage(walkimage[i]);
 
 
 
-        person.setImage(image[i]);
-            i++;
 
 
 
@@ -208,24 +237,16 @@ class Ballpane extends Pane {
 
 
 
-        if(i>14)
+        i++;
+
+        if(i>=Characters[menupane.charindex].walk)
         {
             i=0;
 
         }
+        System.out.println(Characters[menupane.charindex].walk);
 
-
-        person.setImage(image[i]);
-        i++;
-
-
-
-
-
-
-
-
-
+        person.setImage(walkimage[i]);
 
 
 
@@ -261,7 +282,9 @@ class Ballpane extends Pane {
         circle2.setCenterX(q);
         circle2.setCenterY(w);
 
-      /*  if(counter>0) {
+
+
+  /*if(counter>0) {
 
             Shape shape = Shape.intersect(person, circle);
 
@@ -277,6 +300,7 @@ class Ballpane extends Pane {
 
             }
         }*/
+
         if(counter>0 && !cond) {
 
 
@@ -286,9 +310,9 @@ class Ballpane extends Pane {
 
 
                 deadanimation=new Timeline(new KeyFrame(Duration.millis(50),e->{
-                    if(j<=14 )
+                    if(j<=Characters[menupane.charindex].dead )
                     {
-                        person.setImage(image[j+15]);
+                        person.setImage(deadimage[i]);
 
 
                     }
@@ -322,9 +346,9 @@ class Ballpane extends Pane {
 
                  deadanimation=new Timeline(new KeyFrame(Duration.millis(50),e->{
 
-                     if(j<=14 )
+                     if(j<=Characters[menupane.charindex].dead )
                      {
-                         person.setImage(image[j+15]);
+                         person.setImage(deadimage[i]);
 
 
                      }
@@ -354,3 +378,4 @@ class Ballpane extends Pane {
 
     }
 }
+
